@@ -1,3 +1,8 @@
+### 
+
+edit the docker image name 
+`nano docker/imagename`
+
 ### docker build
-build and push `bash docker/build.sh`
-build only `bash docker/buildonly.sh`
+- build and push `bash docker/build.sh`
+- build only `bash docker/buildonly.sh`
