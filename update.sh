@@ -1,7 +1,7 @@
 echo updateBuildMachine
-host=user@machine.ip
+host=user@ma.ch.ine.ip
 port=22
 keypath=~/.ssh/id_rsa
-project=suanpan_sample
-rsync -delete -avhe "ssh -i ${keypath} -p ${port}" ./ ${host}:~/${project}
-ssh -i ${keypath} -p ${port} ${host} "cd ~/${project}/ && bash ./docker/buildonly.sh"
+project=$(basename $PWD)
+rsync -delete -avhe "ssh -i ${keypath} -p ${port}" ./ ${host}:~/build_suanpan/${project}
+ssh -i ${keypath} -p ${port} ${host} "cd ~/build_suanpan/${project}/ && bash ./docker/build.sh"
